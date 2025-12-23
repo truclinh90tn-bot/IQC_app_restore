@@ -4,23 +4,41 @@ import pandas as pd
 
 import qc_core as qc
 
+# ===============================
+# OFFLINE MODE – TẮT SUPABASE
+# ===============================
+USE_SUPABASE = False   # ← Để False là KHÔNG dùng Supabase
 
+# ===============================
+# Cấu hình giao diện & CSS
+# ===============================
 qc.apply_page_config()
 qc.inject_global_css()
 
-# (NEW) Login + phân quyền + lưu dữ liệu theo PXN (Supabase)
-qc.require_login()
+# ===============================
+# Login (chỉ bật khi dùng Supabase)
+# ===============================
+if USE_SUPABASE:
+    qc.require_login()
 
+# ===============================
+# Sidebar cấu hình
+# ===============================
 cfg = qc.render_sidebar()
 
 sigma_cat, active_rules = qc.get_sigma_category_and_rules(
     cfg["sigma_value"], cfg["num_levels"]
 )
 
+# ===============================
+# Header & thẻ thông tin
+# ===============================
 qc.render_global_header()
 qc.render_top_info_cards(cfg, sigma_cat, active_rules)
 
-
+# ===============================
+# Quick actions
+# ===============================
 st.markdown("### ⚡ Quick actions")
 
 qa_col1, qa_col2, qa_col3, qa_col4 = st.columns(4)
@@ -49,6 +67,9 @@ with qa_col4:
         icon="📘",
     )
 
+# ===============================
+# Dashboard tổng quan
+# ===============================
 st.markdown("### 📊 Dashboard nội kiểm – Tổng quan")
 
 col1, col2 = st.columns([2, 3])

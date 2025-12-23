@@ -1,0 +1,19 @@
+{
+  "bg": "#FFFEFB",
+  "panel": "#D8B06C",
+  "panelDark": "#B8862B",
+  "gold": "#B07C1A",
+  "goldHover": "#9A6B12",
+  "goldSoft": "rgba(184, 138, 43, 0.18)",
+  "text": "#2D2318",
+  "text2": "#6B5A44",
+  "border": "rgba(184, 138, 43, 0.34)",
+  "card": "#FFFFFF",
+  "cardStrong": "#FFFFFF",
+  "shadow": "rgba(15, 23, 42, 0.14)",
+  "shadowStrong": "rgba(15, 23, 42, 0.20)",
+  "chartBg": "#FFFFFF",
+  "grid": "rgba(45, 35, 24, 0.18)",
+  "error": "#A94442",
+  "warning": "#C28F2C"
+}

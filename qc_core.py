@@ -151,10 +151,10 @@ def require_login():
 
     if do_login:
         try:
-            # gọi hàm SQL: check_login(p_username, p_password)
+            # gọi hàm SQL: check_login(p_password, p_username)
             res = supabase.rpc(
                 "check_login",
-                {"p_username": username.strip(), "p_password": password},
+                {"p_password": password, "p_username": username.strip()},
             ).execute()
 
             if res.data and len(res.data) > 0:
